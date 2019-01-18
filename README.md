@@ -1,4 +1,4 @@
-# readwrire_app
+# readwrite_app
 
 A new Flutter application.
 
