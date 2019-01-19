@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: ReadWrite(),
     );
@@ -24,12 +24,11 @@ class ReadWrite extends StatefulWidget {
 
 class _ReadWriteState extends State<ReadWrite> {
   var _dataEntry = TextEditingController();
-  var message = " ";
 
   void assign() async {
     setState(() {});
 
-    message = await readData();
+    ;
   }
 
   @override
@@ -38,7 +37,7 @@ class _ReadWriteState extends State<ReadWrite> {
       appBar: AppBar(
         title: Text('Read/Write'),
         centerTitle: true,
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.green,
       ),
       body: Container(
         padding: EdgeInsets.all(13.4),
@@ -66,7 +65,7 @@ class _ReadWriteState extends State<ReadWrite> {
                         Text(
                           'Save Data',
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 50.0),
+                          style: TextStyle(fontSize: 30.0, color: Colors.white),
                         ),
                         Padding(padding: EdgeInsets.all(14.5)),
                         FutureBuilder(
@@ -74,10 +73,10 @@ class _ReadWriteState extends State<ReadWrite> {
                             builder: (BuildContext context,
                                 AsyncSnapshot<String> data) {
                               if (data.hasData != null) {
-                                return
-                                  Text(
+                                return Text(
                                   data.data.toString(),
-                                  style: TextStyle(color: Colors.blueAccent),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20.0),
                                 );
                               } else {
                                 return Text('No data saved');

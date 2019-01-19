@@ -24,6 +24,6 @@ Future<String> readData() async {
     String data = await file.readAsString(); //read file
     return data;
   } catch (e) {
-    return "nothing saved yet";
+    return "";
   }
 }
