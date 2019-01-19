@@ -1,4 +1,4 @@
-package kristopherca.readwrireapp;
+package kristopherca.readwriteapp;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

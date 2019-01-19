@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'readwrite.dart';
-import 'dart:async';
 
 void main() => runApp(MyApp());
 
@@ -70,7 +69,20 @@ class _ReadWriteState extends State<ReadWrite> {
                           style: TextStyle(fontSize: 50.0),
                         ),
                         Padding(padding: EdgeInsets.all(14.5)),
-                        Text('$message')
+                        FutureBuilder(
+                            future: readData(),
+                            builder: (BuildContext context,
+                                AsyncSnapshot<String> data) {
+                              if (data.hasData != null) {
+                                return
+                                  Text(
+                                  data.data.toString(),
+                                  style: TextStyle(color: Colors.blueAccent),
+                                );
+                              } else {
+                                return Text('No data saved');
+                              }
+                            })
                       ],
                     ),
                   )),
